@@ -1,0 +1,9 @@
+# See /sys/class/leds/led*/trigger for TRIGGER values
+
+# green
+LED0_STATE=1
+LED0_TRIGGER=mmc0
+
+# red
+LED1_STATE=1
+LED1_TRIGGER=input

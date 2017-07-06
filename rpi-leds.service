@@ -1,0 +1,10 @@
+[Unit]
+Description=LED Configuration
+
+[Service]
+EnvironmentFile=-/etc/default/rpi-leds
+Type=oneshot
+ExecStart=/usr/local/sbin/rpi-leds
+
+[Install]
+WantedBy=multi-user.target

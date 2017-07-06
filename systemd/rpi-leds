@@ -1,0 +1,19 @@
+#!/bin/bash -x
+
+DEFAULTS="/etc/default/rpi-leds"
+
+[ -f $DEFAULTS ] && . $DEFAULTS
+
+if [ ${LED0_STATE:-1} -ne 0 ]
+then
+    echo ${LED0_TRIGGER:-mmc0} > /sys/class/leds/led0/trigger
+else
+    echo ${LED0_STATE:-1} > /sys/class/leds/led0/brightness
+fi
+
+if [ ${LED1_STATE:-1} -ne 0 ]
+then
+    echo ${LED1_TRIGGER:-input} > /sys/class/leds/led1/trigger
+else
+    echo ${LED1_STATE:-1} > /sys/class/leds/led1/brightness
+fi
